@@ -1,0 +1,31 @@
+
+<!-- BẢN QUYỀN THUỘC VỀ NGUYỄN VĂN TRÚC -->
+<script>
+   var btn1 = document.getElementById("btn1");
+    var btn1_vn = document.getElementById("btn1-vn");
+  
+
+  btn1_vn.addEventListener('click', () => {
+    fetch('https://lotouse.com/api.php')
+            .then((response) => {
+                return (response.json());
+            })
+            .then((data) => {
+                results.innerHTML = `
+         
+<ul>
+            <li style="text-align:center;font-weight: 900;">Username : ${username}</li>
+           
+            <li style="text-align:center;font-weight: 900;">Họ:
+${first_name}</li>
+ 
+            <li style="text-align:center;font-weight: 900;">Tên:
+${last_name}</li>
+           
+            <li style="text-align:center;font-weight: 900;">Giới tính:
+${gender}</li>
+</ul>
+        `;
+            })
+    })
+</script>
